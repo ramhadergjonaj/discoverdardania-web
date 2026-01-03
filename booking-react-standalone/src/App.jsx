@@ -1,17 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-// Placeholder components (Të tjerët do i mbushin këto)
-const BookingContainer = () => <div className="p-10"><h1>Booking Form (Coming Soon by Person 5)</h1></div>;
-const NotFound = () => <div className="p-10"><h1>404 - Page Not Found</h1></div>;
+import BookingContainer from './components/BookingContainer'; // <--- Importo container-in e ri
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 py-12">
         <Routes>
+          {/* Tani Route '/' shfaq aplikacionin e vërtetë, jo placeholder */}
           <Route path="/" element={<BookingContainer />} />
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
