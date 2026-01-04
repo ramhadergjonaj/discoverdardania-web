@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours & Hiking – DiscoverDardania</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header { background-color: var(--primary); color: var(--primary-foreground); padding: 8rem 0 4rem; text-align: center; }
+        .tours-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; padding: 4rem 0; }
+        @media (min-width: 1024px) { .tours-grid { grid-template-columns: repeat(2, 1fr); } }
+        .tour-card { background-color: var(--card); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-card); display: flex; flex-direction: column; transition: all 0.3s ease; }
+        @media (min-width: 640px) { .tour-card { flex-direction: row; } }
+        .tour-card:hover { box-shadow: var(--shadow-elevated); }
+        .tour-img-wrapper { position: relative; flex: 0 0 40%; height: 240px; }
+        @media (min-width: 640px) { .tour-img-wrapper { height: auto; } }
+        .tour-img { width: 100%; height: 100%; object-fit: cover; }
+        .tour-content { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+        .tour-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+        .difficulty-badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+        .diff-Easy { color: #16a34a; background-color: #f0fdf4; }
+        .diff-Moderate { color: #d97706; background-color: #fef3c7; }
+        .diff-Challenging { color: #ea580c; background-color: #fff7ed; }
+        .diff-Expert { color: #dc2626; background-color: #fef2f2; }
+        .tour-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.5rem 0; padding: 1rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--foreground); }
+        .meta-icon { color: var(--accent); }
+        .tour-price { margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
+    </style>
+</head>
+
+<body>
+    <header id="main-header" class="not-home">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z" /></svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-name">DiscoverDardania</span>
+                    <span class="logo-sub">Explore Kosovo</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="destinations.html" class="nav-item">Destinations</a>
+                <a href="tours.html" class="nav-item active">Tours</a>
+                <a href="booking.html" class="nav-item">Book Now</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">Tours & Hiking Trips</h1>
+                <p style="color: hsla(45, 30%, 96%, 0.8); max-width: 40rem; margin: 0 auto; font-size: 1.125rem;">Join our expert-led adventures through Kosovo's most spectacular landscapes.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div id="tours-grid" class="tours-grid-fix">
+                
+                <!-- Card 1: Rugova -->
+                <article class="tour-card card animate-fade-up">
+                    <div class="tour-img-wrapper">
+                        <img src="assets/hero-rugova.jpg" alt="Rugova Canyon Adventure" class="tour-img">
+                    </div>
+                    <div class="tour-content">
+                        <div class="tour-header">
+                            <div>
+                                <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.25rem;">Rugova Canyon</p>
+                                <h2 style="font-size: 1.5rem;">Rugova Canyon Adventure</h2>
+                            </div>
+                            <span class="difficulty-badge diff-Moderate">Moderate</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.6;">Explore the majestic Rugova Canyon with experienced guides. Trek through ancient forests and discover hidden waterfalls.</p>
+                        <div class="tour-meta">
+                            <div class="meta-item"><svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>8 hours</span></div>
+                            <div class="meta-item"><svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="19" cy="4" r="3"/></svg><span>Max 12 people</span></div>
+                        </div>
+                        <div class="tour-price">
+                            <div><span style="font-size: 0.875rem; color: var(--muted-foreground);">From</span><p style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">€45</p></div>
+                            <a href="booking.html?dest=Rugova%20Canyon" class="btn btn-accent" style="padding: 0.75rem 1.5rem;">Book Now</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Sharri -->
+                <article class="tour-card animate-fade-up delay-1">
+                    <div class="tour-img-wrapper">
+                        <img src="assets/sharri-mountains.jpg" alt="Sharri Alpine Trek" class="tour-img">
+                    </div>
+                    <div class="tour-content">
+                        <div class="tour-header">
+                            <div>
+                                <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.25rem;">Sharri Mountains</p>
+                                <h2 style="font-size: 1.5rem;">Sharri Alpine Trek</h2>
+                            </div>
+                            <span class="difficulty-badge diff-Challenging">Challenging</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.6;">A two-day expedition into the heart of Sharri National Park. Camp under the stars and summit breathtaking peaks.</p>
+                        <div class="tour-meta">
+                            <div class="meta-item"><svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>2 Days</span></div>
+                            <div class="meta-item"><svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="19" cy="4" r="3"/></svg><span>Max 8 people</span></div>
+                        </div>
+                        <div class="tour-price">
+                            <div><span style="font-size: 0.875rem; color: var(--muted-foreground);">From</span><p style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">€120</p></div>
+                            <a href="booking.html?dest=Sharri%20Mountains" class="btn btn-accent" style="padding: 0.75rem 1.5rem;">Book Now</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: Mirusha -->
+                <article class="tour-card animate-fade-up delay-2">
+                    <div class="tour-img-wrapper">
+                        <img src="assets/mirusha-falls.jpg" alt="Mirusha Waterfall Trail" class="tour-img">
+                    </div>
+                    <div class="tour-content">
+                        <div class="tour-header">
+                            <div>
+                                <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.25rem;">Mirusha Waterfalls</p>
+                                <h2 style="font-size: 1.5rem;">Mirusha Waterfall Trail</h2>
+                            </div>
+                            <span class="difficulty-badge diff-Easy">Easy</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.6;">Perfect family-friendly hike along 12 waterfalls. Swim in natural pools and enjoy a picnic lunch by the canyon.</p>
+                        <div class="tour-meta">
+                            <div class="meta-item"><svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>4 hours</span></div>
+                            <div class="meta-item"><svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="19" cy="4" r="3"/></svg><span>Max 15 people</span></div>
+                        </div>
+                        <div class="tour-price">
+                            <div><span style="font-size: 0.875rem; color: var(--muted-foreground);">From</span><p style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">€25</p></div>
+                            <a href="booking.html?dest=Mirusha%20Waterfalls" class="btn btn-accent" style="padding: 0.75rem 1.5rem;">Book Now</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4: Brezovica -->
+                <article class="tour-card animate-fade-up delay-3">
+                    <div class="tour-img-wrapper">
+                        <img src="assets/brezovica.jpg" alt="Brezovica Summit Challenge" class="tour-img">
+                    </div>
+                    <div class="tour-content">
+                        <div class="tour-header">
+                            <div>
+                                <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-bottom: 0.25rem;">Brezovica</p>
+                                <h2 style="font-size: 1.5rem;">Brezovica Summit Challenge</h2>
+                            </div>
+                            <span class="difficulty-badge diff-Expert">Expert</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.6;">Conquer the highest peaks of the Sharri range. This challenging trek rewards you with panoramic views.</p>
+                        <div class="tour-meta">
+                            <div class="meta-item"><svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>10 hours</span></div>
+                            <div class="meta-item"><svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="19" cy="4" r="3"/></svg><span>Max 6 people</span></div>
+                        </div>
+                        <div class="tour-price">
+                            <div><span style="font-size: 0.875rem; color: var(--muted-foreground);">From</span><p style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">€75</p></div>
+                            <a href="booking.html?dest=Brezovica" class="btn btn-accent" style="padding: 0.75rem 1.5rem;">Book Now</a>
+                        </div>
+                    </div>
+                </article>
+                
+            </div>
+        </section>
+
+        <!-- Custom Tour CTA -->
+        <section style="background-color: var(--card); border-top: 1px solid var(--border);">
+            <div class="container" style="text-align: center;">
+                <h2 style="font-size: 2.25rem; margin-bottom: 1rem;">Looking for a Custom Experience?</h2>
+                <p style="color: var(--muted-foreground); max-width: 32rem; margin: 0 auto 2rem;">We can organize private tours and custom itineraries for groups, schools, or corporate events.</p>
+                <a href="contact.html" class="btn btn-primary">Inquire About Custom Tours</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon" style="background-color: hsla(45, 30%, 96%, 0.1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z" /></svg>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-name" style="color: var(--primary-foreground);">DiscoverDardania</span>
+                            <span class="logo-sub">Zbulo bukuritë e Kosovës</span>
+                        </div>
+                    </div>
+                    <p>Your gateway to Kosovo's natural wonders. Experience breathtaking landscapes, rich heritage, and unforgettable adventures.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="destinations.html" class="footer-link">Destinations</a></li>
+                        <li><a href="tours.html" class="footer-link">Tours & Hiking</a></li>
+                        <li><a href="booking.html" class="footer-link">Book a Trip</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="footer-contact">
+                        <li class="contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-icon"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg><span>Rr. Agim Ramadani 15, Pristina, Kosovo</span></li>
+                        <li class="contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg><span>+383 44 123 456</span></li>
+                        <li class="contact-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-icon"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg><span>info@discoverdardania.com</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
+                        <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg></a>
+                        <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" /><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" /></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 DiscoverDardania. All rights reserved.</p>
+                <p class="academic-note">Academic Project - Client-Side Web Programming</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
