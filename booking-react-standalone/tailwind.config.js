@@ -1,11 +1,83 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+    content: [
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['DM Sans', 'system-ui', 'sans-serif'],
+                serif: ['Playfair Display', 'Georgia', 'serif'],
+            },
+            colors: {
+                border: "hsl(var(--border))",
+                input: "hsl(var(--input))",
+                ring: "hsl(var(--ring))",
+                background: "hsl(var(--background))",
+                foreground: "hsl(var(--foreground))",
+                primary: {
+                    DEFAULT: "hsl(var(--primary))",
+                    foreground: "hsl(var(--primary-foreground))",
+                },
+                secondary: {
+                    DEFAULT: "hsl(var(--secondary))",
+                    foreground: "hsl(var(--secondary-foreground))",
+                },
+                destructive: {
+                    DEFAULT: "hsl(var(--destructive))",
+                    foreground: "hsl(var(--destructive-foreground))",
+                },
+                muted: {
+                    DEFAULT: "hsl(var(--muted))",
+                    foreground: "hsl(var(--muted-foreground))",
+                },
+                accent: {
+                    DEFAULT: "hsl(var(--accent))",
+                    foreground: "hsl(var(--accent-foreground))",
+                },
+                popover: {
+                    DEFAULT: "hsl(var(--popover))",
+                    foreground: "hsl(var(--popover-foreground))",
+                },
+                card: {
+                    DEFAULT: "hsl(var(--card))",
+                    foreground: "hsl(var(--card-foreground))",
+                },
+                gold: "hsl(var(--gold))",
+                forest: "hsl(var(--forest))",
+                earth: "hsl(var(--earth))",
+                cream: "hsl(var(--cream))",
+            },
+            borderRadius: {
+                lg: "var(--radius)",
+                md: "calc(var(--radius) - 2px)",
+                sm: "calc(var(--radius) - 4px)",
+            },
+            animation: {
+                "fade-up": "fade-up 0.8s ease-out forwards",
+                "float": "float 6s ease-in-out infinite",
+            },
+            keyframes: {
+                "fade-up": {
+                    "0%": { opacity: "0", transform: "translateY(30px)" },
+                    "100%": { opacity: "1", transform: "translateY(0)" },
+                },
+                "float": {
+                    "0%, 100%": { transform: "translateY(0)" },
+                    "50%": { transform: "translateY(-10px)" },
+                },
+            },
+            backgroundImage: {
+                'gradient-hero': 'var(--gradient-hero)',
+                'gradient-gold': 'var(--gradient-gold)',
+            },
+            boxShadow: {
+                'soft': 'var(--shadow-soft)',
+                'card': 'var(--shadow-card)',
+                'elevated': 'var(--shadow-elevated)',
+            },
+        },
+    },
+    plugins: [],
 }
