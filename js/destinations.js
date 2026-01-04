@@ -26,12 +26,38 @@ const destinations = [
         id: 3,
         name: "Sharri Mountains",
         location: "Southern Kosovo",
-        description: "UNESCO-protected national park with alpine meadows, glacial lakes, and traditional mountain villages.",
+        description: "UNESCO-protected national park with alpine meadows, glacial lakes, and traditional mountain villages. Home to unique flora and fauna.",
         image: "assets/sharri-mountains.jpg",
         category: "nature",
         rating: 4.9,
     },
-    // Shtoni të tjerat këtu...
+    {
+        id: 4,
+        name: "Brezovica",
+        location: "Sharri Range",
+        description: "Premier mountain resort offering world-class skiing in winter and scenic hiking trails in summer with panoramic views.",
+        image: "assets/brezovica.jpg",
+        category: "adventure",
+        rating: 4.7,
+    },
+    {
+        id: 5,
+        name: "Gjakova Old Bazaar",
+        location: "Gjakova",
+        description: "One of the oldest and largest bazaars in the Balkans, featuring Ottoman architecture, traditional crafts, and authentic cuisine.",
+        image: "assets/gjakova-bazaar.jpg",
+        category: "culture",
+        rating: 4.6,
+    },
+    {
+        id: 6,
+        name: "Germia Park",
+        location: "Pristina",
+        description: "A 62-hectare urban forest park just outside Pristina, perfect for hiking, picnics, and outdoor recreation year-round.",
+        image: "assets/germia-park.jpg",
+        category: "nature",
+        rating: 4.5,
+    },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -41,17 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const renderDestinations = (filtered) => {
         grid.innerHTML = '';
-
         if (filtered.length === 0) {
             grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 4rem;">No destinations found in this category.</div>';
         }
-
         filtered.forEach((dest, index) => {
             const card = document.createElement('article');
             card.className = 'dest-card animate-fade-up';
             card.style.animationDelay = `${index * 0.1}s`;
 
-            // Kjo HTML është ajo që bën magjinë vizuale (Overlay, Badge, Rating)
             card.innerHTML = `
                 <div class="dest-img-wrapper">
                     <img src="${dest.image}" alt="${dest.name}" class="dest-img">
@@ -72,18 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.6;">${dest.description}</p>
                 </div>
             `;
-
             grid.appendChild(card);
         });
-
-        if (resultsCount) {
-             resultsCount.textContent = `${filtered.length} destination${filtered.length !== 1 ? 's' : ''}`;
-        }
+        if(resultsCount) resultsCount.textContent = `${filtered.length} destination${filtered.length !== 1 ? 's' : ''}`;
     };
 
     renderDestinations(destinations);
 
-    // Filter logic
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             filterButtons.forEach(b => b.classList.remove('active'));
