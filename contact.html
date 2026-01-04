@@ -1,47 +1,55 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contact-form');
-    
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            let isValid = true;
-            
-            // Validate Name
-            const name = document.getElementById('name');
-            if (name.value.length < 2) {
-                showError(name, 'Name is too short');
-                isValid = false;
-            } else {
-                clearError(name);
-            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - DiscoverDardania</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER (Copy-Paste) -->
 
-            // Validate Email
-            const email = document.getElementById('email');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email.value)) {
-                showError(email, 'Please enter a valid email');
-                isValid = false;
-            } else {
-                clearError(email);
-            }
+    <main class="container" style="padding-top: 6rem; padding-bottom: 4rem;">
+        <h1 class="section-title">Get in Touch</h1>
+        
+        <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2rem;">
+            <!-- Left: Info -->
+            <div class="contact-info">
+                <h3>Our Office</h3>
+                <p>Rr. Agim Ramadani 15, Pristina</p>
+                <p>+383 44 123 456</p>
+                <p>info@discoverdardania.com</p>
+                
+                <div style="margin-top: 2rem; background: #eee; height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    Map Placeholder
+                </div>
+            </div>
 
-            if (isValid) {
-                alert('Message sent successfully! (Demo)');
-                form.reset();
-            }
-        });
-    }
-});
+            <!-- Right: Form -->
+            <form id="contact-form" class="card" style="padding: 2rem;">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Name</label>
+                    <input type="text" id="name" class="input-field" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+                    <small class="error-msg" style="color: red; display: none;">Name is required</small>
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Email</label>
+                    <input type="email" id="email" class="input-field" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+                    <small class="error-msg" style="color: red; display: none;">Invalid email address</small>
+                </div>
 
-function showError(input, msg) {
-    const small = input.parentElement.querySelector('small');
-    input.style.borderColor = 'red';
-    small.innerText = msg;
-    small.style.display = 'block';
-}
+                <div class="form-group" style="margin-bottom: 1rem;">
+                    <label>Message</label>
+                    <textarea id="message" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; height: 100px;"></textarea>
+                </div>
 
-function clearError(input) {
-    const small = input.parentElement.querySelector('small');
-    input.style.borderColor = '#ddd';
-    small.style.display = 'none';
-}
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- FOOTER (Copy-Paste) -->
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
